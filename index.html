@@ -1,0 +1,2803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js"></script>
+    <script src="https://cdn.lottielab.com/s/lottie-player@1.x/player-web.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" src="/styles.css" />
+    <link rel="icon" href="./images/logo mini.svg" />
+    <title>BitBloom | Technology, Creativity, and Innovation</title>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-roboto: "Roboto", sans-serif;
+        --font-poppins: "Poppins", sans-serif;
+        --color-regal-blue: #243c5a;
+        --color-black: #151515;
+        --color-white: #fefefe;
+        --color-russian-violet: #20143d;
+        --color-persian-blue: #4235a5;
+        --color-old-gold: #d1bc40;
+
+        --shadow-3xl: 0 0 15px 0 rgba(254, 254, 254, 1);
+        --shadow-black-3xl: 0px 0px 200px 100px #151515;
+
+        --animate-fadeIn: fadeIn 1s ease-out forwards;
+        --animate-scroll-right: scrollRightAnimation 40s linear infinite;
+        --animate-scroll-left: scrollLeftAnimation 40s linear infinite;
+        --animate-bounce-slow: bounceSlow 5s ease-in-out infinite;
+        --animate-rocket-play: rocketPlay 30s linear infinite;
+        --animate-rocket-play-right: rocketPlayRight 30s linear infinite;
+      }
+
+      body {
+        cursor: url("./images//custom\ cursor.png"), pointer;
+        background-color: #151515;
+        background-image: linear-gradient(
+            to right,
+            rgba(254, 254, 254, 0.2) 2px,
+            transparent 2px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(254, 254, 254, 0.2) 2px,
+            transparent 2px
+          );
+        background-size: 80px 80px;
+      }
+
+      .animate-scroll-right:hover {
+        animation-play-state: paused;
+      }
+
+      .animate-scroll-left:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scrollRightAnimation {
+        0% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(-34%);
+        }
+
+        50% {
+          transform: translateX(0%);
+        }
+
+        75% {
+          transform: translateX(34%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes scrollLeftAnimation {
+        0% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(34%);
+        }
+
+        50% {
+          transform: translateX(0%);
+        }
+
+        75% {
+          transform: translateX(-34%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes bounceSlow {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes rocketPlay {
+        0% {
+          top: 50%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        5% {
+          top: 50%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        10% {
+          top: 10%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        15% {
+          top: 10%;
+          right: 6%;
+          rotate: -60deg;
+        }
+        20% {
+          top: 10%;
+          right: 30%;
+          rotate: -90deg;
+        }
+        40% {
+          top: 10%;
+          right: 84%;
+          rotate: 0deg;
+        }
+        45% {
+          top: 38%;
+          right: 84%;
+          rotate: -0deg;
+        }
+        55% {
+          top: 38%;
+          right: 84%;
+          rotate: -0deg;
+        }
+        60% {
+          top: 10%;
+          right: 84%;
+          rotate: 60deg;
+        }
+        65% {
+          top: 10%;
+          right: 60%;
+          rotate: 90deg;
+        }
+        80% {
+          top: 10%;
+          right: 6%;
+          rotate: 60deg;
+        }
+        85% {
+          top: 10%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        95% {
+          top: 50%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        100% {
+          top: 50%;
+          right: 6%;
+          rotate: 0deg;
+        }
+      }
+
+      @keyframes rocketPlayRight {
+        0% {
+          top: 38%;
+          right: 84%;
+          rotate: 0deg;
+        }
+        5% {
+          top: 38%;
+          right: 84%;
+          rotate: 0deg;
+        }
+        10% {
+          top: 10%;
+          right: 84%;
+          rotate: 0deg;
+        }
+        15% {
+          top: 10%;
+          right: 84%;
+          rotate: 60deg;
+        }
+        20% {
+          top: 10%;
+          right: 30%;
+          rotate: 90deg;
+        }
+        40% {
+          top: 10%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        45% {
+          top: 50%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        55% {
+          top: 50%;
+          right: 6%;
+          rotate: 0deg;
+        }
+        60% {
+          top: 10%;
+          right: 6%;
+          rotate: -60deg;
+        }
+        65% {
+          top: 10%;
+          right: 30%;
+          rotate: -90deg;
+        }
+        80% {
+          top: 10%;
+          right: 84%;
+          rotate: -60deg;
+        }
+        85% {
+          top: 10%;
+          right: 84%;
+          rotate: 0deg;
+        }
+        95% {
+          top: 38%;
+          right: 84%;
+          rotate: 0deg;
+        }
+        100% {
+          top: 38%;
+          right: 84%;
+          rotate: 0deg;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="relative overflow-x-hidden scroll-smooth">
+    <!-- NAVIGATION BAR -->
+    <nav
+      class="z-50 mx-4 mt-4 border-2 border-white/10 rounded-xl backdrop-blur w-full sticky top-4 flex flex-wrap md:flex-nowrap flex-row gap-4 justify-between items-center bg-black/40 px-12 py-4"
+    >
+      <a
+        href="./index.html"
+        class="flex flex-row gap-4 justify-center items-center w-auto"
+      >
+        <img src="./images//logo mini.svg" alt="" class="w-6 h-auto" />
+        <span class="font-semibold text-white text-base font-roboto">
+          BitBloom
+        </span>
+      </a>
+
+      <div
+        id="nav-menu"
+        class="flex-1 w-full order-3 hidden md:flex md:order-0 flex-col md:flex-row gap-6 justify-center items-center"
+      >
+        <a
+          href="./index.html"
+          class="font-semibold transition opacity-0 animate-fadeIn w-full md:w-auto px-6 py-3 hover:scale-110 hover:bg-black/60 md:hover:bg-transparent rounded-xl text-center text-old-gold text-base font-poppins tracking-wider"
+          >Homepage</a
+        >
+        <a
+          href="./explore.html"
+          class="font-semibold transition opacity-0 animate-fadeIn w-full md:w-auto px-6 py-3 hover:scale-110 hover:bg-black/60 md:hover:bg-transparent rounded-xl text-center text-white text-base font-poppins tracking-wider"
+          >Explore</a
+        >
+        <a
+          href="./topicGenerator.html"
+          class="font-semibold transition opacity-0 animate-fadeIn w-full md:w-auto px-6 py-3 hover:scale-110 hover:bg-black/60 md:hover:bg-transparent rounded-xl text-center text-white text-base font-poppins tracking-wider"
+          >AI Topic Generator</a
+        >
+        <a
+          href="./about.html"
+          class="font-semibold transition opacity-0 animate-fadeIn w-full md:w-auto px-6 py-3 hover:scale-110 hover:bg-black/60 md:hover:bg-transparent rounded-xl text-center text-white text-base font-poppins tracking-wider"
+          >About</a
+        >
+      </div>
+
+      <div class="flex w-auto flex-row gap-2 items-center justify-center">
+        <a
+          href="./explore.html"
+          class="group relative inline-flex items-center bg-gradient-to-r from-black to-old-gold hover:scale-105 hover:shadow-3xl transition px-8 py-2 bg-black rounded-full border-2 border-white/20 font-roboto font-semibold text-white tracking-wider"
+        >
+          <!-- <img
+            src="./images/vector 1.png"
+            class="w-16 absolute left-28 transition-transform duration-300 group-hover:-translate-x-50"
+          /> -->
+          <span>Explore</span>
+          <!-- <img
+            src="./images/vector 1.png"
+            class="w-16 absolute right-28 transition-transform duration-300 group-hover:translate-x-50 rotate-180"
+          /> -->
+        </a>
+
+        <button
+          class="block md:hidden px-4 py-4 hover:bg-white/10 rounded-full cursor-pointer"
+          onclick="document.getElementById('nav-menu').classList.toggle('hidden'), document.getElementById('nav-menu').classList.toggle('flex')"
+        >
+          <img
+            src="./images//menu.svg"
+            alt=""
+            class="w-6 h-6 block"
+            id="nav-img-menu"
+          />
+          <img
+            src="./images//close.svg"
+            alt=""
+            class="w-6 h-6 hidden"
+            id="nav-img-close"
+          />
+        </button>
+        <script>
+          const handleOpenNav = (e) => {
+            const navMenu = document.getElementById("nav-menu");
+            const imgMenu = document.getElementById("nav-img-menu");
+            const imgClose = document.getElementById("nav-img-close");
+
+            navMenu.classList.toggle("hidden");
+            navMenu.classList.toggle("flex");
+            imgMenu.classList.toggle("hidden");
+            imgMenu.classList.toggle("block");
+            imgClose.classList.toggle("hidden");
+            imgClose.classList.toggle("block");
+          };
+        </script>
+      </div>
+    </nav>
+
+    <!-- FIXED LOGO LEFT -->
+    <div class="fixed top-1/2 translate-y-1/2 -left-14 md:-left-30 z-30">
+      <h1
+        class="opacity-0 animate-fadeIn delay-200 rotate-90 text-center text-4xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-20"
+      >
+        BitBloom
+      </h1>
+    </div>
+    <!-- FIXED LOGO RIGHT -->
+    <div class="fixed top-1/2 translate-y-1/2 -right-14 md:-right-30 z-30">
+      <h1
+        class="opacity-0 animate-fadeIn delay-200 -rotate-90 text-center text-4xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-20"
+      >
+        BitBloom
+      </h1>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div
+      id="hero"
+      class="relative w-svw h-svh flex flex-col justify-center items-center"
+    >
+      <div
+        class="flex flex-col gap-2 w-full h-auto justify-center items-center"
+      >
+        <h1
+          class="px-12 opacity-0 animate-fadeIn delay-200 text-center text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Grow up the Future<br class="md:block hidden" />
+          With Code
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-center text-lg md:text-xl font-poppins text-white font-normal tracking-wider px-12"
+        >
+          Empowering the next generation through<br class="md:block hidden" />
+          technology, creativity, and innovation.
+        </p>
+        <a
+          href="./explore.html"
+          class="group relative inline-flex items-center bg-gradient-to-r from-black to-old-gold hover:scale-105 hover:shadow-3xl transition mt-6 px-8 py-2 bg-black rounded-full border-2 border-white/20 font-roboto font-semibold text-white tracking-wider"
+        >
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute left-50 transition-transform duration-300 group-hover:-translate-x-70"
+          />
+          <span>Explore Technology</span>
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute right-50 transition-transform duration-300 group-hover:translate-x-70 rotate-180"
+          />
+        </a>
+      </div>
+
+      <!-- left -->
+      <img
+        src="./images//rectangle left.png"
+        class="absolute sm:hidden md:block xs:block top-1/5 animate-bounce-slow md:left-0 left-1/2 -translate-x-1/2 md:translate-x-0 -z-10 w-full md:w-1/3"
+      />
+
+      <!-- right -->
+      <img
+        src="./images//rectangle right.png"
+        class="absolute sm:hidden md:block xs:block top-1/5 animate-bounce-slow md:right-0 right-1/2 translate-x-1/2 md:translate-x-0 -z-10 w-full md:w-1/3"
+      />
+
+      <!-- left -->
+      <div
+        id="lottieSix"
+        class="absolute -z-10 top-10 left-6 w-44 h-auto border-black animate-bounce-slow"
+      ></div>
+      <div
+        id="lottieFive"
+        class="absolute -z-10 top-34 hidden md:block left-34 w-44 h-auto border-black animate-bounce-slow"
+      ></div>
+      <div
+        id="lottieFour"
+        class="absolute -z-10 top-50 -left-10 w-44 h-auto border-black animate-bounce-slow"
+      ></div>
+
+      <div
+        id="lottieTwo"
+        class="absolute -z-10 top-130 -left-10 w-28 h-auto border-black animate-bounce-slow"
+      ></div>
+
+      <!-- right -->
+      <div
+        id="lottieRightSix"
+        class="absolute -z-10 top-10 right-6 w-44 h-auto border-black animate-bounce-slow"
+      ></div>
+      <div
+        id="lottieRightFive"
+        class="absolute -z-10 top-34 right-34 w-44 h-auto border-black animate-bounce-slow"
+      ></div>
+      <div
+        id="lottieRightFour"
+        class="absolute -z-10 top-50 -right-10 w-44 h-auto border-black animate-bounce-slow"
+      ></div>
+
+      <!-- LOTTIE ROCKET BACK -->
+      <lottie-player
+        src="https://cdn.lottielab.com/l/5yaRyzyopRDTBr.json"
+        loop
+        autoplay
+        id="rocketTwo"
+        class="absolute -z-10 top-80 right-16 w-40 h-auto rotate-0 animate-rocket-play"
+      ></lottie-player>
+
+      <lottie-player
+        src="https://cdn.lottielab.com/l/5yaRyzyopRDTBr.json"
+        loop
+        autoplay
+        id="rocketOne"
+        class="absolute -z-10 top-160 right-240 w-40 h-auto animate-rocket-play-right"
+      ></lottie-player>
+      <!-- LOTTIE LEFT  -->
+      <div
+        id="lottieThree"
+        class="absolute -z-10 top-90 hidden md:block left-44 w-28 h-auto border-black animate-bounce-slow"
+      ></div>
+      <div
+        id="lottieOne"
+        class="absolute -z-10 top-110 left-20 w-28 h-auto border-black animate-bounce-slow"
+      ></div>
+
+      <div
+        id="lottieRightThree"
+        class="absolute -z-10 top-90 right-44 w-28 h-auto border-black animate-bounce-slow"
+      ></div>
+      <div
+        id="lottieRightOne"
+        class="absolute -z-10 top-110 right-20 w-28 h-auto border-black animate-bounce-slow"
+      ></div>
+      <div
+        id="lottieRightTwo"
+        class="absolute -z-10 top-130 -right-10 w-28 h-auto border-black animate-bounce-slow"
+      ></div>
+
+      <!-- rocket -->
+      <!-- <div id="rocketOne" class="absolute z-10 top-130 right-100 w-auto h-auto"></div> -->
+    </div>
+
+    <!-- SECTION 3 -->
+    <div
+      class="flex flex-col gap-2 w-full h-auto justify-center items-center gap-6 px-24 md:pt-32 pt-56 pb-32"
+    >
+      <h1
+        class="opacity-0 animate-fadeIn delay-200 text-center text-3xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-16 md:leading-20"
+      >
+        Code, Creativity,<br class="md:block hidden" />
+        and Innovation Work Together
+      </h1>
+
+      <div class="w-full h-full relative flex justify-center items-center">
+        <img
+          src="./images//bitbloom big.svg"
+          alt=""
+          class="w-auto h-auto animate-bounce-slow"
+        />
+
+        <div
+          class="absolute z-0 top-54 left-40 md:left-64 animate-bounce-slow w-auto px-6 py-2 md:px-8 md:py-4 flex flex-row gap-2 justify-center items-center rounded-full border-2 border-white/20 bg-gradient-to-r from-black via-russian-violet to-old-gold hover:shadow-3xl hover:scale-105 transition cursor-pointer"
+        >
+          <span class="text-white font-semibold font-roboto text-lg md:text-xl"
+            >Code</span
+          >
+        </div>
+
+        <div
+          class="absolute z-0 bottom-56 left-2 md:left-74 animate-bounce-slow w-auto px-6 py-2 md:px-8 md:py-4 flex flex-row gap-2 justify-center items-center rounded-full border-2 border-white/20 bg-gradient-to-r from-black via-russian-violet to-old-gold hover:shadow-3xl hover:scale-105 transition cursor-pointer"
+        >
+          <span class="text-white font-semibold font-roboto text-lg md:text-xl"
+            >Innovation</span
+          >
+        </div>
+
+        <div
+          class="absolute z-0 top-64 right-40 md:right-72 animate-bounce-slow w-auto px-6 py-2 md:px-8 md:py-4 flex flex-row gap-2 justify-center items-center rounded-full border-2 border-white/20 bg-gradient-to-r from-black via-russian-violet to-old-gold hover:shadow-3xl hover:scale-105 transition cursor-pointer"
+        >
+          <span class="text-white font-semibold font-roboto text-lg md:text-xl"
+            >Creativity</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="relative w-svw h-auto flex justify-center items-center py-12">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex flex-col gap-2 w-full md:w-auto h-auto justify-center items-center shadow-black-3xl bg-black/80 rounded-full px-12 py-12"
+      >
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-center text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Stay Ahead with<br class="hidden md:block" />
+          the Latest in Tech
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-center text-lg md:text-xl font-poppins text-white font-normal tracking-wider"
+        >
+          From AI trends to dev tools, discover what&apos;s<br />shaping the
+          future—before everyone else does.
+        </p>
+        <a
+          href="#"
+          class="group relative inline-flex items-center bg-gradient-to-r from-black to-old-gold hover:scale-105 hover:shadow-3xl transition mt-6 px-8 py-2 bg-black rounded-full border-2 border-white/20 font-roboto font-semibold text-white tracking-wider"
+        >
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute left-50 transition-transform duration-300 group-hover:-translate-x-70"
+          />
+          <span>Explore Technology</span>
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute right-50 transition-transform duration-300 group-hover:translate-x-70 rotate-180"
+          />
+        </a>
+      </div>
+
+      <div class="w-svw h-auto flex flex-col items-center justify-center">
+        <!-- ROW 1 -->
+        <div class="flex flex-row gap-x-20 justify-center items-center">
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div
+          class="-translate-y-10 flex flex-row gap-x-20 justify-center items-center"
+        >
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div
+          class="-translate-y-20 flex flex-row gap-x-20 justify-center items-center"
+        >
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div
+          class="-translate-y-30 flex flex-row gap-x-20 justify-center items-center"
+        >
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- ROW 5 -->
+        <div
+          class="-translate-y-40 flex flex-row gap-x-20 justify-center items-center"
+        >
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- ROW 6 -->
+        <div
+          class="-translate-y-50 flex flex-row gap-x-20 justify-center items-center"
+        >
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+
+          <div
+            class="relative w-44 h-44 rotate-45 border-2 border-white/20 rounded-2xl overflow-hidden cursor-pointer brightness-80 hover:brightness-100 hover:shadow-3xl hover:scale-105 transition"
+          >
+            <img
+              src="./images//artifical intelligence 2.png"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[150%] max-w-none h-[150%] -rotate-45 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div
+      class="flex flex-col w-full h-auto justify-center items-center gap-24 px-6 md:px-24 py-32"
+    >
+      <div class="flex flex-col w-full h-auto justify-center items-center">
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-center text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Building a Smarter<br class="hidden md:block" />
+          Tomorrow Through Code
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-center text-lg md:text-xl font-poppins text-white font-normal tracking-wider"
+        >
+          We believe that code is more than just syntax. It&apos;s a tool to
+          solve real-world<br />problems, inspire change, and shape the future.
+          Our mission is to make technology<br />accessible, inspirational, and
+          practical for all curious minds.
+        </p>
+      </div>
+
+      <!-- CARD SCROLL ANIMATION -->
+      <div class="flex flex-col gap-6 justify-center items-center w-full">
+        <!-- CARD CONTAINER TOP -->
+        <div
+          class="flex flex-row gap-6 justify-center items-center w-auto animate-scroll-right"
+        >
+          <!-- CARD 1 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images/artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                1. AI in Healthcare
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                How artificial intelligence is transforming diagnosis and
+                treatment.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">2.1k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.1k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images//artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                2. AI in Finance
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                Predictive analytics and fraud detection using machine learning.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">3.8k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">2.5k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images//artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                3. AI and Robotics
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                The synergy between AI and autonomous machines in industries.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.9k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.0k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images//artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                4. AI in Education
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                Personalized learning and smart content in digital classrooms.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">2.9k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.7k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 5 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images//artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                5. AI Ethics & Bias
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                Understanding fairness and accountability in AI systems.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">4.3k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">3.2k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 6 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images/artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                6. AI in Agriculture
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                Precision farming powered by drones and machine learning.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.4k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">0.9k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 7 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images/artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                7. AI for Climate Change
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                Predictive models to combat global warming and natural
+                disasters.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">2.0k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.3k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 8 -->
+          <a
+            href="./topicDetail.html"
+            class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+          >
+            <img
+              src="/images/artifical intelligence 2.png"
+              class="w-32 aspect-square h-32 rounded-2xl object-cover"
+            />
+            <div class="w-96 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white">
+                8. AI in Art
+              </h2>
+              <p class="font-poppins text-base text-white/60">
+                Creative expression through generative models and deep learning.
+              </p>
+              <div
+                class="w-full flex flex-row gap-4 justify-start items-center"
+              >
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/eye.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.7k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img
+                    src="/images/like.svg"
+                    class="w-4 h-4 object-cover text-white"
+                  />
+                  <p class="text-white/60 text-xs font-poppins">1.2k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD CONTAINER Bottom -->
+      <div
+        class="flex flex-row gap-6 justify-center items-center w-auto animate-scroll-left"
+      >
+        <!-- Card 1 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              9. Voice AI Assistants
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              The evolution of smart assistants like Alexa and Siri.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.1k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.6k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              10. AI in Cybersecurity
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Detecting threats faster using intelligent systems.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">4.5k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.7k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              11. AI in Gaming
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              NPC behavior and dynamic storytelling with machine learning.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.8k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.9k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              12. AI for Accessibility
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Helping the disabled with speech, vision, and movement support.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.6k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">0.8k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              13. AI in Transportation
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Self-driving cars and traffic flow optimization.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.4k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.0k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              14. AI in Music
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Composing symphonies and beats with neural networks.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.1k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">0.6k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 7 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              15. AI in Daily Life
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Explore how AI is transforming everyday tools and tasks.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">1.2k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">550</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 8 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              16. Robotics & Automation
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Discover the future of robots in homes and industries.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">980</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">340</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div
+      class="flex flex-col w-full h-auto justify-center items-center gap-6 px-6 md:px-24 py-32"
+    >
+      <div class="flex flex-col w-full h-auto justify-center items-center">
+        <h1
+          class="text-center text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Explore the Code That<br class="hidden md:block" />
+          Powers the Future
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-center text-lg md:text-xl font-poppins text-white font-normal tracking-wider"
+        >
+          Dive into curated topics in web development, AI, design,<br
+            class="hidden md:block"
+          />and more—crafted to shape tomorrow&apos;s tech leaders.
+        </p>
+        <a
+          href="./explore.html"
+          class="group relative inline-flex items-center bg-gradient-to-r from-black to-old-gold hover:scale-105 hover:shadow-3xl transition mt-6 px-8 py-2 bg-black rounded-full border-2 border-white/20 font-roboto font-semibold text-white tracking-wider"
+        >
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute left-40 transition-transform duration-300 group-hover:-translate-x-60"
+          />
+          <span>Explore Topic</span>
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute right-40 transition-transform duration-300 group-hover:translate-x-60 rotate-180"
+          />
+        </a>
+      </div>
+      <!-- LOTTIE ANIMATIOn -->
+      <div
+        class="w-auto h-[260px] sm:h-[300px] md:h-[700px] flex justify-center items-center overflow-hidden"
+      >
+        <lottie-player
+          src="https://cdn.lottielab.com/l/28GkxZQ49YKwrY.json"
+          loop
+          autoplay
+          class="w-svw h-auto"
+        ></lottie-player>
+      </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div
+      class="flex flex-col w-full h-auto justify-center items-center gap-12 px-6 md:px-24 py-32"
+    >
+      <div
+        class="flex flex-col w-full h-auto justify-center items-center fade-in-on-scroll"
+      >
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-center text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Let Intelligence Create<br class="hidden md:block" />
+          What Curiosity Seeks
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-center text-lg md:text-xl font-poppins text-white font-normal tracking-wider"
+        >
+          Can&apos;t find the answer? Our smart content generator<br
+            class="hidden md:block"
+          />brings your questions to life—instantly.
+        </p>
+      </div>
+
+      <div
+        class="flex flex-row w-auto gap-2 justify-center items-center rounded-2xl border-white border-2 p-2 bg-russian-violet -rotate-[8deg] transition"
+      >
+        <input
+          type="text"
+          id="input"
+          placeholder="e.g. What's the Quantum Computation?"
+          class="w-36 md:w-96 px-6 py-2 font-semibold text-white outline-none border-none tracking-wider"
+          onfocus="this.parentElement.classList.remove('-rotate-[8deg]'), this.parentElement.classList.add('shadow-3xl')"
+          onblur="this.parentElement.classList.add('-rotate-[8deg]'), this.parentElement.classList.remove('shadow-3xl')"
+        />
+        <button
+          onclick="generate()"
+          id="generate-button"
+          class="flex flex-row gap-2 justify-center items-center w-auto px-6 py-2 rounded-xl bg-old-gold cursor-pointer tracking-wider"
+        >
+          <img src="./images//sparkles.svg" alt="" class="w-6 h-6" />
+          <span
+            class="font-semibold font-roboto text-white text-sm md:text-base"
+            >Generate</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div
+      class="flex flex-col w-full h-auto justify-center items-center px-6 md:px-24 py-32"
+    >
+      <div class="flex flex-col w-full h-auto justify-center items-center">
+        <div class="text-center">
+          <h1
+            class="animate-fadeIn delay-200 text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+          >
+            Start Small
+          </h1>
+          <h1
+            class="animate-fadeIn delay-600 text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+          >
+            Think Big
+          </h1>
+          <h1
+            class="animate-fadeIn delay-1000 text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+          >
+            Code Forward
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 9 -->
+    <div
+      class="flex flex-col w-full h-auto justify-center items-center gap-6 px-6 md:px-24 py-32"
+    >
+      <div class="flex flex-col w-full h-auto justify-center items-center">
+        <div
+          class="w-auto h-[190px] sm:h-[250px] md:h-[500px] flex justify-center items-center overflow-hidden"
+        >
+          <lottie-player
+            src="https://cdn.lottielab.com/l/5ozZ8Xf862sjEH.json"
+            autoplay
+            class="w-auto h-auto"
+          ></lottie-player>
+        </div>
+
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-center text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Grow up with BitBloom
+        </h1>
+      </div>
+    </div>
+
+    <!-- SECTION 10 -->
+    <div class="flex flex-col gap-6 justify-center items-center w-full">
+      <!-- CARD CONTAINER TOP -->
+      <div
+        class="flex flex-row gap-6 justify-center items-center w-auto animate-scroll-right -rotate-[8deg]"
+      >
+        <!-- CARD 1 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/machine-learning.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              1. Machine Learning Basics
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              An introduction to how machines learn from data.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">1.4k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">600</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Card 2 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              2. AI in Marketing
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Personalized ads, customer insights, and targeted campaigns.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">2.3k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">1.5k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              3. AI in Music
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Music composition and sound recognition powered by AI.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">1.2k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">900</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              4. AI in Journalism
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Automated reporting and content verification using AI tools.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">1.8k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">1.1k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              5. AI in Sports
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Performance analysis, injury prediction, and strategy planning.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">2.7k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">1.9k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              6. AI for Elderly Care
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Companion robots and health monitoring for the elderly.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">1.5k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">950</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 7 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              7. AI in Education
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Personalized learning paths and virtual tutors.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">3.0k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">2.3k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 8 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              8. AI in Law
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Contract analysis and predictive legal outcomes.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">2.1k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4 object-cover" />
+                <p class="text-white/60 text-xs font-poppins">1.7k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col w-full h-auto justify-end items-end fade-in-on-scroll px-6 md:pl-0 md:pr-24 py-12"
+      >
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-end text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Create with Purpose.<br class="hidden md:block" />Design for Impact.
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-end text-lg md:text-xl font-poppins text-white font-normal tracking-wider"
+        >
+          Empower your creativity with the latest insights in UI, UX,<br />motion,
+          and visual storytelling.
+        </p>
+      </div>
+
+      <!-- CARD CONTAINER Middle -->
+      <div
+        class="flex flex-row gap-6 justify-center items-center w-auto animate-scroll-left rotate-[8deg]"
+      >
+        <!-- CARD 1 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              1. AI in Healthcare
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              How artificial intelligence is transforming diagnosis and
+              treatment.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.1k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.1k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images//artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              2. AI in Finance
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Predictive analytics and fraud detection using machine learning.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.8k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.5k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images//artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              3. AI and Robotics
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              The synergy between AI and autonomous machines in industries.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.9k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.0k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images//artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              4. AI in Education
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Personalized learning and smart content in digital classrooms.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.9k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.7k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images//artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              5. AI Ethics & Bias
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Understanding fairness and accountability in AI systems.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">4.3k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.2k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              6. AI in Agriculture
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Precision farming powered by drones and machine learning.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.4k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">0.9k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 7 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              7. AI for Climate Change
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Predictive models to combat global warming and natural disasters.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.0k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.3k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 8 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              8. AI in Art
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Creative expression through generative models and deep learning.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.7k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.2k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col w-full h-auto justify-start items-start fade-in-on-scroll px-6 md:pl-0 md:pl-24 py-12"
+      >
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-start text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          Designing the Future<br class="hidden md:block" />with Creativity
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-start text-lg md:text-xl font-poppins text-white font-normal tracking-wider"
+        >
+          Discover the intersection of visual storytelling, UX strategy,<br />and
+          digital innovation—crafted for tomorrow&apos;s designers.
+        </p>
+      </div>
+
+      <!-- CARD CONTAINER Bottom -->
+      <div
+        class="flex flex-row gap-6 justify-center items-center w-auto animate-scroll-right -rotate-[8deg]"
+      >
+        <!-- Card 1 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              9. Voice AI Assistants
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              The evolution of smart assistants like Alexa and Siri.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.1k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.6k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              10. AI in Cybersecurity
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Detecting threats faster using intelligent systems.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">4.5k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.7k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              11. AI in Gaming
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              NPC behavior and dynamic storytelling with machine learning.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.8k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.9k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              12. AI for Accessibility
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Helping the disabled with speech, vision, and movement support.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.6k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">0.8k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              13. AI in Transportation
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Self-driving cars and traffic flow optimization.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">3.4k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">2.0k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              14. AI in Music
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Composing symphonies and beats with neural networks.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/eye.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">1.1k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img
+                  src="/images/like.svg"
+                  class="w-4 h-4 object-cover text-white"
+                />
+                <p class="text-white/60 text-xs font-poppins">0.6k</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 7 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              15. AI in Daily Life
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Explore how AI is transforming everyday tools and tasks.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">1.2k</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">550</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 8 -->
+        <a
+          href="./topicDetail.html"
+          class="cursor-pointer w-auto flex flex-row gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-6 py-6 rounded-3xl bg-black"
+        >
+          <img
+            src="/images/artifical intelligence 2.png"
+            class="w-32 aspect-square h-32 rounded-2xl object-cover"
+          />
+          <div class="w-96 flex flex-col gap-2 items-start justify-start">
+            <h2 class="font-roboto font-semibold text-xl text-white">
+              16. Robotics & Automation
+            </h2>
+            <p class="font-poppins text-base text-white/60">
+              Discover the future of robots in homes and industries.
+            </p>
+            <div class="w-full flex flex-row gap-4 justify-start items-center">
+              <div class="flex flex-row gap-2">
+                <img src="/images/eye.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">980</p>
+              </div>
+              <div class="flex flex-row gap-2">
+                <img src="/images/like.svg" class="w-4 h-4" />
+                <p class="text-white/60 text-xs font-poppins">340</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- SECTION 11 -->
+    <div class="w-svw h-svh flex flex-col justify-center items-center">
+      <div
+        class="flex flex-col gap-2 w-full h-auto justify-center items-center"
+      >
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-center text-6xl md:text-7xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-18 md:leading-20"
+        >
+          The Future is Designed,<br class="hidden md:block" />Not Just Built
+        </h1>
+        <p
+          class="opacity-0 delay-3000 animate-fadeIn text-center text-lg md:text-xl font-poppins text-white font-normal tracking-wider"
+        >
+          Explore how intentional design is shaping the way we<br />interact
+          with technology and each other.
+        </p>
+        <div
+          class="mt-6 w-full md:w-1/2 flex flex-row flex-wrap justify-center items-center gap-2 md:gap-6"
+        >
+          <a
+            href="#"
+            class="px-6 py-2 rounded-full bg-white/20 hovezzzr:bg-white/40 hover:scale-105 transition text-white text-sm md:text-base text-center font-semibold font-poppins border-2 border-white"
+          >
+            Accessibility
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/40 hover:scale-105 transition text-white text-sm md:text-base text-center font-semibold font-poppins border-2 border-white"
+          >
+            Design System
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/40 hover:scale-105 transition text-white text-sm md:text-base text-center font-semibold font-poppins border-2 border-white"
+          >
+            UI / UX
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/40 hover:scale-105 transition text-white text-sm md:text-base text-center font-semibold font-poppins border-2 border-white"
+          >
+            Illustration
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/40 hover:scale-105 transition text-white text-sm md:text-base text-center font-semibold font-poppins border-2 border-white"
+          >
+            Motion Design
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/40 hover:scale-105 transition text-white text-sm md:text-base text-center font-semibold font-poppins border-2 border-white"
+          >
+            Prototype
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/40 hover:scale-105 transition text-white text-sm md:text-base text-center font-semibold font-poppins border-2 border-white"
+          >
+            Figma
+          </a>
+        </div>
+        <a
+          href="./explore.html"
+          class="group relative inline-flex items-center bg-gradient-to-r from-black to-old-gold hover:scale-105 hover:shadow-3xl transition mt-6 px-8 py-2 bg-black rounded-full border-2 border-white/20 font-roboto font-semibold text-white tracking-wider"
+        >
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute left-60 transition-transform duration-300 group-hover:-translate-x-80"
+          />
+          <span>Explore All Design Topics</span>
+          <img
+            src="./images/vector 1.png"
+            class="w-16 absolute right-60 transition-transform duration-300 group-hover:translate-x-80 rotate-180"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+      class="mx-8 mb-8 flex flex-col md:flex-row gap-6 md:gap-24 justify-between items-start px-6 md:px-24 py-12 rounded-2xl bg-black"
+    >
+      <div
+        class="flex-1 flex flex-col w-auto gap-4 justify-center items-center"
+      >
+        <img src="./images/logo big.svg" alt="" class="w-20 h-auto" />
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-center text-4xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-20"
+        >
+          BitBloom
+        </h1>
+      </div>
+      <div class="flex-1 flex flex-col gap-2">
+        <h3
+          class="font-bold text-base font-roboto bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent"
+        >
+          Pages
+        </h3>
+        <a
+          href="#"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >Homepage</a
+        >
+        <a
+          href="./explore.html"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >Explore</a
+        >
+        <a
+          href="#"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >AI Topic Generator</a
+        >
+        <a
+          href="#"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >About</a
+        >
+      </div>
+      <div class="flex-1 flex flex-col gap-2">
+        <h3
+          class="font-bold text-base font-roboto bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent"
+        >
+          Address
+        </h3>
+        <p class="w-auto font-normal text-white/80 font-poppins">
+          St. Petterbugs disctrict 12 no.12, Holland Bakery 12240
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      //fade in animation
+      const heroSection = document.getElementById("hero");
+
+      //lottie animation
+      const skycraperMiniLottieSettings = {
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "./lottie/skycraper mini/skycraper mini.json",
+      };
+
+      //lottie rocket
+      const rocketLottieSettings = {
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "./lottie/rocket/rocket.json",
+      };
+
+      animationLottieOne = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieOne"),
+      });
+
+      animationLottieTwo = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieTwo"),
+      });
+
+      animationLottieThree = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieThree"),
+      });
+
+      animationLottieFour = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieFour"),
+      });
+
+      animationLottieFive = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieFive"),
+      });
+
+      animationLottieSix = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieSix"),
+      });
+
+      // right
+      animationLottieRightSix = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieRightSix"),
+      });
+
+      animationLottieRightFive = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieRightFive"),
+      });
+      animationLottieRightFour = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieRightFour"),
+      });
+
+      animationLottieRightThree = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieRightThree"),
+      });
+
+      animationLottieRightTwo = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieRightTwo"),
+      });
+
+      animationLottieRightOne = lottie.loadAnimation({
+        ...skycraperMiniLottieSettings,
+        container: document.getElementById("lottieRightOne"),
+      });
+
+      // rocket
+      animationRocketOne = lottie.loadAnimation({
+        ...rocketLottieSettings,
+        container: document.getElementById("rocketOne"),
+      });
+
+      // intersection observe
+      const heroSectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("opacity-0", "translate-y-6");
+              animationLottieOne.play();
+              animationLottieTwo.play();
+              animationLottieThree.play();
+              animationLottieFour.play();
+              animationLottieFive.play();
+              animationLottieSix.play();
+
+              animationLottieRightOne.play();
+              animationLottieRightTwo.play();
+              animationLottieRightThree.play();
+              animationLottieRightFour.play();
+              animationLottieRightFive.play();
+              animationLottieRightSix.play();
+
+              animationRocketOne.play();
+
+              heroSectionObserver.disconnect();
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      heroSectionObserver.observe(heroSection);
+
+      function cleanJsonString(str) {
+        return str
+          .replace(/^```json/, "")
+          .replace(/^```/, "")
+          .replace(/```$/, "")
+          .trim();
+      }
+
+      async function generate() {
+        const generateButton = document.getElementById("generate-button");
+
+        generateButton.innerHTML = "Loading...";
+        // API KEY IS STRICTED! ONLY 1 DOMAIN CAN ACCESS WITH THIS API KEY
+        const API_KEY = "AIzaSyB75Jp7g0y-DvU1KXcUEu6_8nvwn50DtwI";
+        const topic = document.getElementById("input").value;
+
+        const prompt = `
+        Buatkan informasi lengkap tentang topik berikut dengan format JSON:
+        {
+          "title": "",
+          "quickSummary": "",
+          "keyBenefits": [],
+          "risks": [],
+          "quote": "",
+          "useCases": [],
+          "expertOpinions": ["quote": "", "expert": ""],
+          "references": []
+        }
+
+        Topik: ${topic}
+        `;
+
+        const res = await fetch(
+          "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-goog-api-key": API_KEY,
+            },
+            body: JSON.stringify({
+              contents: [{ role: "user", parts: [{ text: prompt }] }],
+            }),
+          }
+        );
+        generateButton.innerHTML = "Success...";
+
+        const output = await res.json();
+        const text = output.candidates[0].content.parts[0].text;
+        console.log(output);
+
+        let cleaned = cleanJsonString(text);
+        let jsonData = JSON.parse(cleaned);
+        console.log(jsonData);
+
+        let encoded = encodeURIComponent(JSON.stringify(jsonData));
+        console.log(encoded);
+        generateButton.innerHTML = "Redirect...";
+
+        window.location.href = `result.html?data=${encoded}`;
+      }
+    </script>
+  </body>
+</html>

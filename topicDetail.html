@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js"></script>
+    <script src="https://cdn.lottielab.com/s/lottie-player@1.x/player-web.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" src="/styles.css" />
+    <link rel="icon" href="./images/logo mini.svg" />
+    <title>BitBloom | Technology, Creativity, and Innovation</title>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      }
+
+      @theme {
+        --font-roboto: "Roboto", sans-serif;
+        --font-poppins: "Poppins", sans-serif;
+        --color-regal-blue: #243c5a;
+        --color-black: #151515;
+        --color-white: #fefefe;
+        --color-russian-violet: #20143d;
+        --color-persian-blue: #4235a5;
+        --color-old-gold: #d1bc40;
+
+        --shadow-3xl: 0 0 15px 0 rgba(254, 254, 254, 1);
+        --shadow-black-3xl: 0px 0px 200px 100px #151515;
+
+        --animate-fadeIn: fadeIn 1s ease-out forwards;
+        --animate-scroll-right: scrollRightAnimation 40s linear infinite;
+        --animate-scroll-left: scrollLeftAnimation 40s linear infinite;
+      }
+
+      body {
+        cursor: url("./images//custom\ cursor.png"), pointer;
+        background-color: #151515;
+        background-image: linear-gradient(
+            to right,
+            rgba(254, 254, 254, 0.2) 2px,
+            transparent 2px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(254, 254, 254, 0.2) 2px,
+            transparent 2px
+          );
+        background-size: 80px 80px;
+        scroll-behavior: smooth;
+      }
+
+      .animate-scroll-right:hover {
+        animation-play-state: paused;
+      }
+
+      .animate-scroll-left:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scrollRightAnimation {
+        0% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(-34%);
+        }
+
+        50% {
+          transform: translateX(0%);
+        }
+
+        75% {
+          transform: translateX(34%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes scrollLeftAnimation {
+        0% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(34%);
+        }
+
+        50% {
+          transform: translateX(0%);
+        }
+
+        75% {
+          transform: translateX(-34%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="relative overflow-x-hidden scroll-smooth">
+    <!-- NAVIGATION NAD TITLE -->
+    <div class="flex flex-row justify-between items-center gap-12 p-6">
+      <a
+        href="./explore.html"
+        class="px-4 py-2 bg-white/20 hover:bg-white/40 rounded-full cursor-pointer"
+      >
+        <img
+          src="./images//arrow-left.svg"
+          alt=""
+          class="w-6 h-auto opacity-60"
+        />
+      </a>
+
+      <h2
+        id="header-title"
+        class="w-full opacity-0 animate-fadeIn delay-200 text-center text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+      >
+        AI in Education: Revolution or Risk?
+      </h2>
+    </div>
+
+    <main class="flex flex-row justify-between items-start gap-12 p-12">
+      <!-- CONTENT -->
+      <div
+        id="contentDetail"
+        class="w-3/4 flex flex-col gap-6 justify-start items-start text-start"
+      >
+        <h2
+          id="title"
+          class="w-full opacity-0 animate-fadeIn delay-200 text-start text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+        >
+          AI in Education: Revolution or Risk?
+        </h2>
+        <!-- <p
+          class="opacity-0 delay-3000 animate-fadeIn text-start text-base font-poppins text-white font-normal tracking-wider"
+        >
+          Uncover how artificial intelligence is transforming learning
+          environments—and the ethical, social, and technical questions it
+          brings.
+        </p> -->
+        <img
+          src="./images//artifical intelligence 2.png"
+          alt=""
+          class="rounded-2xl hover:brightness-80 w-full"
+        />
+        <h2
+          class="w-full opacity-0 animate-fadeIn delay-200 text-start text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+        >
+          Quick Summary
+        </h2>
+        <p
+          id="quickSummary"
+          class="opacity-0 delay-3000 animate-fadeIn text-start text-base font-poppins text-white font-normal tracking-wider"
+        >
+          Artificial Intelligence is reshaping classrooms around the world. From
+          personalized learning to automated grading, AI offers incredible
+          potential to enhance both teaching and learning. But with great power
+          comes great responsibility: concerns about bias, data privacy, and
+          loss of human connection are also on the rise. Is AI the ultimate
+          educational tool—or a risk to the soul of education itself?
+        </p>
+        <h2
+          class="w-full opacity-0 animate-fadeIn delay-200 text-start text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+        >
+          Key Benefits of AI in Education
+        </h2>
+        <ul
+          id="keyBenefits"
+          class="list-disc pl-6 opacity-0 delay-3000 animate-fadeIn text-start text-base font-poppins text-white font-normal tracking-wider"
+        >
+          📚 Personalized Learning Paths<br />
+          🧠 Real-time Feedback & Assessment<br />
+          ⏱️ Automated Administrative Tasks<br />
+          🌐 Global Accessibility for Students<br />
+          📊 Data-Driven Insights for Educators<br />
+        </ul>
+        <h2
+          class="w-full opacity-0 animate-fadeIn delay-200 text-start text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+        >
+          The Risks and Ethical Dilemmas
+        </h2>
+        <ul
+          id="risks"
+          class="opacity-0 list-disc pl-6 delay-3000 animate-fadeIn text-start text-base font-poppins text-white font-normal tracking-wider"
+        >
+          ⚠️ Data Privacy and Surveillance<br />
+          🤖 Dependency on Algorithms<br />
+          🎯 Risk of Bias in AI Models<br />
+          👩‍🏫 Reduction in Human Interaction<br />
+          🧩 Equity Gaps in Access to Technology<br />
+        </ul>
+        <h3
+          id="quote"
+          class="w-full h-auto text-base text-white font-poppins px-6 py-6 bg-russian-violet border-l-4 border-white"
+        >
+          “The more we rely on AI, the more we must ask: Who is programming the
+          teacher?”
+        </h3>
+        <h2
+          class="w-full opacity-0 animate-fadeIn delay-200 text-start text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+        >
+          Real-World Use Cases
+        </h2>
+        <ul
+          id="useCases"
+          class="opacity-0 list-disc pl-6 delay-3000 animate-fadeIn text-start text-base font-poppins text-white font-normal tracking-wider"
+        >
+          1. Chatbots for Student Support Used in universities to answer FAQs
+          24/7.<br />
+          2. Predictive Analytics Used to identify at-risk students early.<br />
+          3. AI Writing Assistants Tools like Grammarly and ChatGPT are used for
+          writing support and grammar checking.<br />
+          4. Adaptive Learning Platforms Such as Coursera, Khan Academy, and
+          Duolingo tailoring content to learners.<br />
+        </ul>
+        <h2
+          class="w-full opacity-0 animate-fadeIn delay-200 text-start text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+        >
+          Expert Opinions & Research Quotes
+        </h2>
+        <div id="expertOpinions"></div>
+        <h2
+          class="w-full opacity-0 animate-fadeIn delay-200 text-start text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-12"
+        >
+          Reference Links (Resources)
+        </h2>
+        <ul
+          id="references"
+          class="opacity-0 delay-3000 animate-fadeIn text-start text-base font-poppins text-white font-normal tracking-wider"
+        >
+          Official Reports & Research Papers:<br />
+          a. UNESCO: AI in Education - Global Policy Guide<br />
+          b. World Economic Forum: AI and the Future of Learning<br />
+          c. Stanford HAI: Human-Centered AI in Schools<br />
+          d. Tools Mentioned:<br />
+          e. Khan Academy AI<br />
+          f. OpenAI ChatGPT<br />
+          g. Grammarly AI Tools<br />
+        </ul>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div
+        class="sticky top-20 w-1/4 flex flex-col gap-6 justify-start items-start"
+      >
+        <div
+          class="w-full flex flex-row gap-2 justify-between items-center p-2 rounded-full border-2 border-white/20 bg-black"
+        >
+          <button
+            class="px-4 py-4 hover:bg-white/10 rounded-full cursor-pointer"
+          >
+            <img
+              src="./images//like.svg"
+              alt=""
+              class="w-6 h-auto opacity-60"
+            />
+          </button>
+          <button
+            class="px-4 py-4 hover:bg-white/10 rounded-full cursor-pointer"
+          >
+            <img
+              src="./images//unlike.svg"
+              alt=""
+              class="w-6 h-auto opacity-60"
+            />
+          </button>
+          <button
+            class="px-4 py-4 hover:bg-white/10 rounded-full cursor-pointer"
+          >
+            <img
+              src="./images//share.svg"
+              alt=""
+              class="w-6 h-auto opacity-60"
+            />
+          </button>
+          <button
+            class="px-4 py-4 hover:bg-white/10 rounded-full cursor-pointer"
+          >
+            <img
+              src="./images//info.svg"
+              alt=""
+              class="w-6 h-auto opacity-60"
+            />
+          </button>
+        </div>
+
+        <button
+          onclick="window.location.href='./topicGenerator.html'"
+          class="w-full px-6 py-5 flex flex-row gap-2 justify-center items-center rounded-full border-2 border-white/20 bg-gradient-to-r from-black via-russian-violet to-old-gold hover:shadow-3xl hover:from-black hover:to-russian-violet hover:scale-105 transition cursor-pointer"
+        >
+          <img src="./images//sparkles.svg" alt="" class="w-6 h-auto" />
+          <span class="text-white font-semibold font-roboto text-xl"
+            >Bring to AI</span
+          >
+        </button>
+
+        <div
+          class="w-full flex flex-col gap-2 justify-start items-start p-6 rounded-4xl border-2 border-white/20 bg-black"
+        >
+          <h4
+            class="w-full opacity-0 animate-fadeIn delay-200 text-start text-xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-8"
+          >
+            In This Page
+          </h4>
+          <ul>
+            <li class="list-disc ml-5 text-white/60 hover:text-white/100">
+              <a
+                href="#quickSummary"
+                class="font-poppins text-lg text-white/60 hover:text-white/100"
+                >Quick Summary</a
+              >
+            </li>
+            <li class="list-disc ml-5 text-white/60 hover:text-white/100">
+              <a
+                href="#keyBenefits"
+                class="font-poppins text-lg text-white/60 hover:text-white/100"
+                >Key Benefit of ....</a
+              >
+            </li>
+            <li class="list-disc ml-5 text-white/60 hover:text-white/100">
+              <a
+                href="#risks"
+                class="font-poppins text-lg text-white/60 hover:text-white/100"
+                >The Risk and....</a
+              >
+            </li>
+            <li class="list-disc ml-5 text-white/60 hover:text-white/100">
+              <a
+                href="#useCases"
+                class="font-poppins text-lg text-white/60 hover:text-white/100"
+                >Real-Wrold u...</a
+              >
+            </li>
+            <li class="list-disc ml-5 text-white/60 hover:text-white/100">
+              <a
+                href="#expertOpinions"
+                class="font-poppins text-lg text-white/60 hover:text-white/100"
+                >Expert Opinio...</a
+              >
+            </li>
+            <li class="list-disc ml-5 text-white/60 hover:text-white/100">
+              <a
+                href="#references"
+                class="font-poppins text-lg text-white/60 hover:text-white/100"
+                >References ...</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!-- UI UX -->
+    <div class="w-full h-auto py-24">
+      <div
+        class="w-full flex flex-row gap-6 justify-between items-center px-12 py-4"
+      >
+        <h3
+          class="opacity-0 animate-fadeIn delay-200 text-center text-3xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-20"
+        >
+          Want more like this?
+        </h3>
+
+        <div class="flex flex-row gap-4 justify-center items-center w-auto">
+          <button
+            class="px-3 py-1 bg-white/20 hover:bg-white/40 rounded-full cursor-pointer"
+            onclick="document.getElementById('trendingCards').scrollLeft -= 200;"
+          >
+            <img
+              src="./images//arrow-left.svg"
+              alt=""
+              class="w-5 h-auto opacity-60"
+            />
+          </button>
+
+          <button
+            class="px-3 py-1 bg-white/20 hover:bg-white/40 rounded-full cursor-pointer"
+            onclick="document.getElementById('trendingCards').scrollLeft += 200;"
+          >
+            <img
+              src="./images//arrow-right.svg"
+              alt=""
+              class="w-5 h-auto opacity-60"
+            />
+          </button>
+
+          <button
+            class="flex flex-row gap-2 justify-center items-center w-auto px-6 py-2 rounded-xl bg-old-gold/100 hover:bg-old-gold/90 transition cursor-pointer tracking-wider"
+          >
+            <span class="font-semibold font-roboto text-white">See All</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD CONTAINER -->
+      <div
+        id="trendingCards"
+        class="flex flex-row gap-6 justify-start items-center w-full overflow-auto overflow-y-auto hide-scrollbar scroll-smooth snap-x px-12 py-2"
+      ></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+      class="mx-8 mb-8 flex flex-col md:flex-row gap-6 md:gap-24 justify-between items-start px-6 md:px-24 py-12 rounded-2xl bg-black"
+    >
+      <div
+        class="flex-1 flex flex-col w-auto gap-4 justify-center items-center"
+      >
+        <img src="./images/logo big.svg" alt="" class="w-20 h-auto" />
+        <h1
+          class="opacity-0 animate-fadeIn delay-200 text-center text-4xl font-roboto font-black bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent leading-20"
+        >
+          BitBloom
+        </h1>
+      </div>
+      <div class="flex-1 flex flex-col gap-2">
+        <h3
+          class="font-bold text-base font-roboto bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent"
+        >
+          Pages
+        </h3>
+        <a
+          href="#"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >Homepage</a
+        >
+        <a
+          href="./explore.html"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >Explore</a
+        >
+        <a
+          href="#"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >AI Topic Generator</a
+        >
+        <a
+          href="#"
+          class="font-normal font-poppins text-white/80 hover:text-white/100 tracking-wider"
+          >About</a
+        >
+      </div>
+      <div class="flex-1 flex flex-col gap-2">
+        <h3
+          class="font-bold text-base font-roboto bg-gradient-to-r from-old-gold to-white bg-clip-text text-transparent"
+        >
+          Address
+        </h3>
+        <p class="w-auto font-normal text-white/80 font-poppins">
+          St. Petterbugs disctrict 12 no.12, Holland Bakery 12240
+        </p>
+      </div>
+    </footer>
+    <script type="module">
+      import { explore } from "./datas/explore.js";
+
+      function renderMarkdownLite(text) {
+        if (!text) return "";
+
+        return text
+          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+          .replace(/\*(.*?)\*/g, "<em>$1</em>")
+          .replace(/^- (.*?)/gm, "<li>$1</li>")
+          .replace(/\n/g, "<br>");
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      let id = params.get("id");
+      let cat = params.get("cat");
+
+      if (!id) {
+        console.error("No data found in query params");
+      }
+
+      const dataObj = explore[`${cat}`].filter((value, index) => value.id == id)[0];
+      console.log(dataObj);
+
+      document.getElementById("header-title").innerHTML =
+        dataObj.title || "No Title";
+      document.getElementById("title").innerHTML = dataObj.title || "No Title";
+
+      document.getElementById("quickSummary").innerHTML = renderMarkdownLite(
+        dataObj.quickSummary
+      );
+
+      document.getElementById("keyBenefits").innerHTML = dataObj.keyBenefits
+        .map((item) => `<li class="mb-2">${renderMarkdownLite(item)}</li>`)
+        .join("");
+
+      document.getElementById("risks").innerHTML = dataObj.risks
+        .map((item) => `<li class="mb-2">${renderMarkdownLite(item)}</li>`)
+        .join("");
+
+      document.getElementById("quote").innerHTML = renderMarkdownLite(
+        dataObj.quote
+      );
+
+      document.getElementById("useCases").innerHTML = dataObj.useCases
+        .map((item) => `<li class="mb-2">${renderMarkdownLite(item)}</li>`)
+        .join("");
+
+      document.getElementById("expertOpinions").innerHTML =
+        dataObj.expertOpinions
+          .map(
+            (op) => `
+          <div class="p-4 bg-russian-violet text-white font-poppins border-l-4 border-white mb-4">
+            <p  class="w-full h-auto text-base text-white font-poppins px-6 py-6">${renderMarkdownLite(
+              op.quote
+            )}</p>
+            <span class="font-semibold">${op.expert}</span>
+          </div>
+        `
+          )
+          .join("");
+
+      document.getElementById("references").innerHTML = dataObj.references
+        .map((ref) => `<li>${renderMarkdownLite(ref)}</li>`)
+        .join("");
+
+      function renderCards(category, containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const list = titles[category];
+        if (!list || list.length === 0) return;
+
+        const template = (title, index) => `
+          <a
+            href="./topicDetail.html?id=${index}"
+            class="snap-start scroll-ml-12 cursor-pointer w-auto flex flex-col gap-4 border-white/40 hover:border-white/100 hover:shadow-3xl border-2 px-4 py-4 rounded-3xl bg-black"
+          >
+            <img
+              src="/images/artifical intelligence 2.png"
+              class="w-44 aspect-square h-44 rounded-2xl object-cover"
+            />
+            <div class="w-44 flex flex-col gap-2 items-start justify-start">
+              <h2 class="font-roboto font-semibold text-xl text-white line-clamp-2">
+                ${title}
+              </h2>
+              <p class="w-full h-auto font-poppins text-sm text-white/60">
+                Menggali peran AI dalam pengembangan sistem dan solusi teknik modern.
+              </p>
+              <div class="w-auto flex flex-row gap-4 justify-start items-center">
+                <div class="flex flex-row gap-2">
+                  <img src="/images/eye.svg" class="w-4 h-4 object-cover text-white" />
+                  <p class="text-white/60 text-xs font-poppins">1.5k</p>
+                </div>
+                <div class="flex flex-row gap-2">
+                  <img src="/images/like.svg" class="w-4 h-4 object-cover text-white" />
+                  <p class="text-white/60 text-xs font-poppins">0.6k</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        `;
+
+        list.forEach((title, i) => {
+          container.insertAdjacentHTML("beforeend", template(title, i));
+        });
+      }
+
+      renderCards("trending", "trendingCards");
+    </script>
+  </body>
+</html>
