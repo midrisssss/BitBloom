@@ -4,11 +4,11 @@ Universitas Ary Ginanjar
 ## Anggota Tim
 * Ketua : Muhammad Idris
 ## Deskripsi Karya
-Website tempat berkumpulnya semua informasi tentang teknologi dan desain 
+Website tempat berkumpulnya semua informasi tentang informasi, teknologi terbaru, tips & trick, dan desain ui ux.
 
 ---
 
-**BitBloom** — Empowering the Next Generation Through Technology and Code.
+**BitBloom** — Digital Innovation for Social Impact.
 
 Website: [https://bit-bloom-nu.vercel.app/](https://bit-bloom-nu.vercel.app/)
 
